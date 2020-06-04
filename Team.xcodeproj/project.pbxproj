@@ -14,6 +14,8 @@
 		A1C0CD652484F56A002D64FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1C0CD642484F56A002D64FD /* Assets.xcassets */; };
 		A1C0CD682484F56A002D64FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C0CD662484F56A002D64FD /* LaunchScreen.storyboard */; };
 		A1E176042488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E176032488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift */; };
+		A1E17606248934ED00D5A1E2 /* RegionMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E17605248934EC00D5A1E2 /* RegionMapViewController.swift */; };
+		A1E1760C24893EF200D5A1E2 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A1C0CD672484F56A002D64FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1C0CD692484F56A002D64FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E176032488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWholeAnimalTableViewController.swift; sourceTree = "<group>"; };
+		A1E17605248934EC00D5A1E2 /* RegionMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionMapViewController.swift; sourceTree = "<group>"; };
+		A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				A1C0CD662484F56A002D64FD /* LaunchScreen.storyboard */,
 				A1C0CD692484F56A002D64FD /* Info.plist */,
 				A1E176032488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift */,
+				A1E17605248934EC00D5A1E2 /* RegionMapViewController.swift */,
+				A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E176042488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift in Sources */,
+				A1E1760C24893EF200D5A1E2 /* SelectRegionViewController.swift in Sources */,
 				A1C0CD602484F568002D64FD /* ViewController.swift in Sources */,
+				A1E17606248934ED00D5A1E2 /* RegionMapViewController.swift in Sources */,
 				A1C0CD5C2484F568002D64FD /* AppDelegate.swift in Sources */,
 				A1C0CD5E2484F568002D64FD /* SceneDelegate.swift in Sources */,
 			);
