@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="llk-AH-bze">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -306,7 +306,11 @@
                         <viewLayoutGuide key="safeArea" id="KdU-r5-ajF"/>
                     </view>
                     <navigationItem key="navigationItem" title="지역 선택" id="Tqj-BT-mrI">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="0Mt-ZO-7Y8"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="0Mt-ZO-7Y8">
+                            <connections>
+                                <segue destination="MR8-9S-Mbr" kind="unwind" unwindAction="doneToPickerViewControllerWithSegue:" id="vHU-nW-etg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="1cT-GZ-YCq">
                             <connections>
                                 <segue destination="OPf-Gy-YXA" kind="show" id="jcS-rE-L6G"/>
@@ -318,6 +322,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhn-bN-HhN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MR8-9S-Mbr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="871" y="256"/>
         </scene>

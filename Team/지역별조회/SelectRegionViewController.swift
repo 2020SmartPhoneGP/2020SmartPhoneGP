@@ -8,12 +8,13 @@
 
 import UIKit
 
-class SelectRegionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SelectRegionViewController: ParserViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var regionPickerView: UIPickerView!
     
     // pickerView 테이터 배열
-    var pickerDataSource = ["서울", "경기도", "강원도", "전라도", "경상도", "충청도", "제주도"]
+    var pickerDataSource : [String] = []
+    var apiController : GetAPI = GetAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,13 @@ class SelectRegionViewController: UIViewController, UIPickerViewDataSource, UIPi
         self.regionPickerView.delegate = self;
         self.regionPickerView.dataSource = self;
         
+        beginParsing(wantURL: apiController.getURL(wantURL: "시도"), strings: "orgCd", "orgdownNm")
+        
+        if let cluster = valueCluster["orgdownNm"]{
+            for value in cluster{
+                pickerDataSource.append(value)
+            }
+        }
     }
     
     // 피커뷰의 컴포넌트 개수
@@ -50,15 +58,4 @@ class SelectRegionViewController: UIViewController, UIPickerViewDataSource, UIPi
               
            }
        }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

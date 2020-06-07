@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ParserViewController.parser(_:foundCharacters:):ParserViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "valueCluster">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectRegionViewController.viewDidLoad():SelectRegionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "valueCluster">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ParserViewController.beginParsing(wantURL:strings:):ParserViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "texts">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
