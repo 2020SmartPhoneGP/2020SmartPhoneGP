@@ -22,7 +22,7 @@ class SelectRegionViewController: ParserViewController, UIPickerViewDataSource, 
         self.regionPickerView.delegate = self;
         self.regionPickerView.dataSource = self;
         
-        beginParsing(wantURL: apiController.getURL(wantURL: "시도"), strings: "orgCd", "orgdownNm")
+        beginParsing(wantURL: apiController.getURL(wantURL: "시도"), strings: "orgCd", "orgdownNm")       // 시도코드,   시도명
         
         if let cluster = valueCluster["orgdownNm"]{
             for value in cluster{

@@ -8,78 +8,109 @@
 
 import UIKit
 
-class FindWholeAnimalTableViewController: UITableViewController {
+class FindWholeAnimalTableViewController: ParserViewController, UITableViewDataSource, UIPickerViewDelegate {
+    
+    var dataSource : [String] = []
+    var apiController : GetAPI = GetAPI()
+    
+    // feed 데이터를 저장하는 mutable array
+    var posts = NSMutableArray()
+    // feed 데이터를 저장하는 mutable dictionary
+    var elements = NSMutableDictionary()
+    var element = NSString()
+    // 저장 문자열 변수
+    var date = NSMutableString()
+    var age = NSMutableString()
 
+    // 유기동물 사진
+    var imageurl = NSMutableString()
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "happenDt") as! NSString as String
+        
+        cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "age") as! NSString as String
+        
+        if let url = URL(string: (posts.object(at: indexPath.row) as AnyObject).value(forKey: "imageurl") as! NSString as String){
+            if let data = try? Data(contentsOf: url){
+                cell.imageView?.image = UIImage(data: data)
+            }
+        }
+        return cell
+    }
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        beginParsing(wantURL: apiController.getFindWhole(wantURL: "유기동물 조회"), strings: "happenDt", "age")          // 품종, 나이  응답메세지
+        // cluster에 가져올 코드들 쌓임
+        if let cluster = valueCluster["age"]{
+            for value in cluster{
+                dataSource.append(value)
+            }
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    override func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]){
+        element = elementName as NSString
+        if(elementName as NSString).isEqual(to: "item"){
+            elements = NSMutableDictionary()
+            elements = [:]
+            date = NSMutableString()
+            date = ""
+            age = NSMutableString()
+            age = ""
+            
+            // 동물 사진
+            imageurl = NSMutableString()
+            imageurl = ""
+        }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    
+    // 발견 날짜와 나이를 발견하면 date, age에 저장
+    override func parser(_ parser: XMLParser, foundCharacters string: String){
+        // 발견 날짜
+        if element.isEqual(to: "happenDt"){
+            date.append(string)
+        }
+        // 나이
+        else if element.isEqual(to: "age"){
+            age.append(string)
+        }
+        else if element.isEqual(to: "popfile"){
+            imageurl.append(string)
+        }
 
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    // element의 끝에서 feed 데이터를 dictionary에 저장
+    override func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?){
+        if(elementName as NSString).isEqual(to: "item"){
+            if !date.isEqual(nil){
+                elements.setObject(date, forKey: "happenDt" as NSCopying)
+            }
+            if !age.isEqual(nil){
+                elements.setObject(age, forKey: "age" as NSCopying)
+            }
+            if !imageurl.isEqual(nil){
+                elements.setObject(imageurl, forKey: "imageurl" as NSCopying)
+            }
+            posts.add(elements)
+        }
     }
-    */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
