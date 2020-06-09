@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A14BCB2C248F9E8E00739744 /* ShowRegionKindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BCB2B248F9E8E00739744 /* ShowRegionKindTableViewController.swift */; };
 		A1859CB4248CC51D00461F45 /* GetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1859CB3248CC51D00461F45 /* GetAPI.swift */; };
 		A1859CBA248CCC3100461F45 /* ParserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1859CB9248CCC3100461F45 /* ParserViewController.swift */; };
 		A1C0CD5C2484F568002D64FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0CD5B2484F568002D64FD /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A14BCB2B248F9E8E00739744 /* ShowRegionKindTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRegionKindTableViewController.swift; sourceTree = "<group>"; };
 		A1859CB3248CC51D00461F45 /* GetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAPI.swift; sourceTree = "<group>"; };
 		A1859CB9248CCC3100461F45 /* ParserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserViewController.swift; sourceTree = "<group>"; };
 		A1C0CD582484F568002D64FD /* Team.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Team.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +52,7 @@
 		A1859CB5248CC74300461F45 /* 지역별조회 */ = {
 			isa = PBXGroup;
 			children = (
+				A14BCB2B248F9E8E00739744 /* ShowRegionKindTableViewController.swift */,
 				A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */,
 			);
 			name = "지역별조회";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E176042488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift in Sources */,
+				A14BCB2C248F9E8E00739744 /* ShowRegionKindTableViewController.swift in Sources */,
 				A1859CBA248CCC3100461F45 /* ParserViewController.swift in Sources */,
 				A1E1760C24893EF200D5A1E2 /* SelectRegionViewController.swift in Sources */,
 				A1C0CD602484F568002D64FD /* ViewController.swift in Sources */,

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     // Done 버튼을 누르면 동작하는 unwind 메소드
     // 아무 동작도 하지 않지만 이 메소드가 있어야지 TableViewCOntroller에서 unwind 연결이 가능
-    @IBAction func doneToPickerViewController(segue: UIStoryboardSegue){}
+    @IBAction func doneToMainViewController(segue: UIStoryboardSegue){}
     
     
     var url : String = ""

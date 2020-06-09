@@ -46,9 +46,16 @@
                             <outlet property="delegate" destination="rbm-h1-MDo" id="zCf-S9-e3q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="유기동물의 전체 수" id="Q2j-p5-eQJ"/>
+                    <navigationItem key="navigationItem" title="유기동물의 전체 수" id="Q2j-p5-eQJ">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="XOj-HJ-nnJ">
+                            <connections>
+                                <segue destination="c7P-1d-CD8" kind="unwind" unwindAction="doneToMainViewControllerWithSegue:" id="ifF-wj-Hw5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hep-8z-QHV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="c7P-1d-CD8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="870" y="-485"/>
         </scene>
@@ -86,18 +93,34 @@
         <!--종류 및 위치보기-->
         <scene sceneID="EPK-UV-Rnf">
             <objects>
-                <tableViewController id="fQc-nO-3cg" sceneMemberID="viewController">
+                <tableViewController id="fQc-nO-3cg" customClass="ShowRegionKindTableViewController" customModule="Team" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hnw-LG-gcJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3HF-gF-HMU">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="h6G-nc-k8n" detailTextLabel="Rwd-fY-700" style="IBUITableViewCellStyleSubtitle" id="3HF-gF-HMU">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3HF-gF-HMU" id="flJ-Yb-I7Z">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h6G-nc-k8n">
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rwd-fY-700">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -114,6 +137,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tbData" destination="hnw-LG-gcJ" id="Qzi-Y5-dLm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMH-Se-znE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +170,7 @@
         <!--유기동물 조회 서비스-->
         <scene sceneID="2LY-Jg-yeb">
             <objects>
-                <tableViewController id="llk-AH-bze" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UIStoryboardSegue" id="llk-AH-bze" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KtB-HZ-yPM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +185,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="유기동물 수 조회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vt2-yn-HdN">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="전체 유기동물 조회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vt2-yn-HdN">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -169,7 +195,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="8k5-vc-X18" kind="show" id="DUY-PS-eWO"/>
+                                            <segue destination="8k5-vc-X18" kind="show" identifier="segueToFindWhole" id="DUY-PS-eWO"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="OWb-d4-p6d" style="IBUITableViewCellStyleDefault" id="ogF-yA-0Kj">
@@ -189,7 +215,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3B0-Ok-z9S" kind="show" id="wTD-1S-cm2"/>
+                                            <segue destination="3B0-Ok-z9S" kind="show" identifier="segueToSelectRegion" id="wTD-1S-cm2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="pnl-6p-1HN" style="IBUITableViewCellStyleDefault" id="uRC-qf-c3w">
@@ -209,7 +235,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="XRg-pT-InJ" kind="show" id="2bG-Bc-9lg"/>
+                                            <segue destination="XRg-pT-InJ" kind="show" identifier="segueToGraph" id="2bG-Bc-9lg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="1qg-ki-mmc" style="IBUITableViewCellStyleDefault" id="GyB-Ci-4Iz">
@@ -229,7 +255,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3NC-u7-aGH" kind="show" id="Daj-tV-QfY"/>
+                                            <segue destination="3NC-u7-aGH" kind="show" identifier="segueToList" id="Daj-tV-QfY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="oGQ-6y-dhT" style="IBUITableViewCellStyleDefault" id="JKy-5b-n0K">
@@ -329,7 +355,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="1cT-GZ-YCq">
                             <connections>
-                                <segue destination="OPf-Gy-YXA" kind="show" id="jcS-rE-L6G"/>
+                                <segue destination="OPf-Gy-YXA" kind="show" identifier="segueToShowKind" id="jcS-rE-L6G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

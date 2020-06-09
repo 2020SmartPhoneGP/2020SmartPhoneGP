@@ -25,7 +25,7 @@ class FindWholeAnimalTableViewController: ParserViewController, UITableViewDataS
     // 유기동물 사진
     var imageurl = NSMutableString()
 
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return posts.count
     }
