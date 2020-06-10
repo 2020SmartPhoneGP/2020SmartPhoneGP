@@ -25,6 +25,10 @@
 		A1E1760C24893EF200D5A1E2 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */; };
 		A1E5478D2490BA6300881BB1 /* SelectCountyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5478C2490BA6300881BB1 /* SelectCountyTableViewController.swift */; };
 		A1E5478F2490BAC300881BB1 /* ParserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5478E2490BAC300881BB1 /* ParserTableViewController.swift */; };
+		A1E547912491344500881BB1 /* SelectLivestockTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E547902491344500881BB1 /* SelectLivestockTableController.swift */; };
+		A1E547932491420B00881BB1 /* SelectBreedKindTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E547922491420B00881BB1 /* SelectBreedKindTableController.swift */; };
+		A1E547952491577800881BB1 /* searchPetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E547942491577800881BB1 /* searchPetTableViewController.swift */; };
+		A1E5479724915D3300881BB1 /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5479624915D3300881BB1 /* PetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
 		A1E5478C2490BA6300881BB1 /* SelectCountyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountyTableViewController.swift; sourceTree = "<group>"; };
 		A1E5478E2490BAC300881BB1 /* ParserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTableViewController.swift; sourceTree = "<group>"; };
+		A1E547902491344500881BB1 /* SelectLivestockTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLivestockTableController.swift; sourceTree = "<group>"; };
+		A1E547922491420B00881BB1 /* SelectBreedKindTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBreedKindTableController.swift; sourceTree = "<group>"; };
+		A1E547942491577800881BB1 /* searchPetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchPetTableViewController.swift; sourceTree = "<group>"; };
+		A1E5479624915D3300881BB1 /* PetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,10 @@
 				A14BCB2B248F9E8E00739744 /* ShowRegionKindTableViewController.swift */,
 				A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */,
 				A1E5478C2490BA6300881BB1 /* SelectCountyTableViewController.swift */,
+				A1E547902491344500881BB1 /* SelectLivestockTableController.swift */,
+				A1E547922491420B00881BB1 /* SelectBreedKindTableController.swift */,
+				A1E547942491577800881BB1 /* searchPetTableViewController.swift */,
+				A1E5479624915D3300881BB1 /* PetTableViewCell.swift */,
 			);
 			name = "지역별조회";
 			path = "지역별조회";
@@ -200,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B7608B2490B2BE00DD3BE3 /* DetailViewController.swift in Sources */,
+				A1E547952491577800881BB1 /* searchPetTableViewController.swift in Sources */,
+				A1E547932491420B00881BB1 /* SelectBreedKindTableController.swift in Sources */,
 				A1E176042488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift in Sources */,
 				A1B76084249092D100DD3BE3 /* SearchSource.swift in Sources */,
 				A1B76086249092E200DD3BE3 /* MasterViewController.swift in Sources */,
@@ -214,6 +228,8 @@
 				A1B760882490939F00DD3BE3 /* SearchFooter.swift in Sources */,
 				A1C0CD5E2484F568002D64FD /* SceneDelegate.swift in Sources */,
 				A1E5478F2490BAC300881BB1 /* ParserTableViewController.swift in Sources */,
+				A1E547912491344500881BB1 /* SelectLivestockTableController.swift in Sources */,
+				A1E5479724915D3300881BB1 /* PetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

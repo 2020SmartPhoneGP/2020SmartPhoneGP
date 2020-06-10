@@ -65,23 +65,10 @@ class SelectRegionViewController: ParserViewController, UIPickerViewDataSource, 
     // ShowRegionKindTableViewController에 url 정보를 전달하기 위해
     // UINav를 destination으로 설정 후 ShowRegionKindTableViewController를 선택
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-    /*    if segue.identifier == "segueToShowKind"{              // 종류 및 위치보기로 넘어가기 위해
-            if let navController = segue.destination as? UINavigationController{
-                if let showRegionKindTableViewController = navController.topViewController as? ShowRegionKindTableViewController{
-                    showRegionKindTableViewController.url = url + pickerDataSource[row]
-                }
-            }
-            
-        }
-    */
         if segue.identifier == "CountyTableViewController"{
-            if let targetNav = segue.destination as? UINavigationController{
-                //targetNav.navigationItem.title = pickerDataSource[currentRow]
-                if let targetView = targetNav.topViewController as? SelectCountyTableViewController{
-                    targetView.navTitle.title = pickerDataSource[currentRow]
-                    targetView.upperCd = pickerOrgCdSource[currentRow]
-                    
-                }
+            if let targetView = segue.destination as? SelectCountyTableViewController{
+                targetView.navTitle.title = pickerDataSource[currentRow]
+                targetView.upperCd = pickerOrgCdSource[currentRow]
             }
         }
     }

@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ParserViewController.parser(_:foundCharacters:):ParserViewController.swift">
+         contextName = "SelectRegionViewController.viewDidLoad():SelectRegionViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "valueCluster">
@@ -11,7 +11,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SelectRegionViewController.viewDidLoad():SelectRegionViewController.swift">
+         contextName = "SelectBreedKindTableController.viewDidLoad():SelectBreedKindTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentLivestock">
+            </PersistentString>
+            <PersistentString
+               value = "valueCluster">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SelectBreedKindTableController.tableView(_:numberOfRowsInSection:):SelectBreedKindTableController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "KNm.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ParserViewController.parser(_:foundCharacters:):ParserViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "valueCluster">
@@ -31,6 +50,17 @@
          <PersistentStrings>
             <PersistentString
                value = "texts">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShowRegionKindTableViewController.showRegionKind(segue:):ShowRegionKindTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "livestockCell.textLabel?.text">
+            </PersistentString>
+            <PersistentString
+               value = "livestockView.currentChar">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

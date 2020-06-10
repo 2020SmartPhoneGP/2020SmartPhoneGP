@@ -41,5 +41,15 @@ class SelectCountyTableViewController: ParserTableViewController {
         
         return cell
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "segueToShowKind"{              // 종류 및 위치보기로 넘어가기 위해
+            if let navController = segue.destination as? UINavigationController{
+                if let showRegionKindTableViewController = navController.topViewController as? ShowRegionKindTableViewController{
+                    
+                }
+            }
+            
+        }
+    
+    }
 }

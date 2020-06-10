@@ -39,16 +39,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "52F66A7F-9638-4D28-8A7E-E73DD5571D44"
+            uuid = "1E35007D-4A20-4242-860C-B2EC8339BFC2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectRegionViewController.swift"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/ShowRegionKindTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "showRegionKind(segue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "077843E3-6350-40DB-8F62-05E794F37D12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectLivestockTableController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37AAD2C6-1029-42FF-B635-896EB419BB57"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectBreedKindTableController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED0F9417-E19A-49E2-99EF-B8000108FD0C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectBreedKindTableController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C66BE162-DD46-436B-B1E9-9B82F2827367"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectBreedKindTableController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9773D3C-DB65-49DC-834B-B1A3557D4725"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectBreedKindTableController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FE71BE4-21BC-40BB-BE09-66B10B903C55"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectBreedKindTableController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
