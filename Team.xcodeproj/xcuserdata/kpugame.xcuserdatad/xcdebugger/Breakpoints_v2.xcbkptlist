@@ -14,8 +14,8 @@
             filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectRegionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -33,6 +33,22 @@
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "parser(_:foundCharacters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52F66A7F-9638-4D28-8A7E-E73DD5571D44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Team/&#x110c;&#x1175;&#x110b;&#x1167;&#x11a8;&#x1107;&#x1167;&#x11af;&#x110c;&#x1169;&#x1112;&#x116c;/SelectRegionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

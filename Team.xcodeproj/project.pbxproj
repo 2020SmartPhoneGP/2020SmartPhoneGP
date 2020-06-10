@@ -23,6 +23,8 @@
 		A1E176042488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E176032488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift */; };
 		A1E17606248934ED00D5A1E2 /* RegionMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E17605248934EC00D5A1E2 /* RegionMapViewController.swift */; };
 		A1E1760C24893EF200D5A1E2 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */; };
+		A1E5478D2490BA6300881BB1 /* SelectCountyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5478C2490BA6300881BB1 /* SelectCountyTableViewController.swift */; };
+		A1E5478F2490BAC300881BB1 /* ParserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E5478E2490BAC300881BB1 /* ParserTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		A1E176032488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWholeAnimalTableViewController.swift; sourceTree = "<group>"; };
 		A1E17605248934EC00D5A1E2 /* RegionMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionMapViewController.swift; sourceTree = "<group>"; };
 		A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
+		A1E5478C2490BA6300881BB1 /* SelectCountyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountyTableViewController.swift; sourceTree = "<group>"; };
+		A1E5478E2490BAC300881BB1 /* ParserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			children = (
 				A14BCB2B248F9E8E00739744 /* ShowRegionKindTableViewController.swift */,
 				A1E1760B24893EF200D5A1E2 /* SelectRegionViewController.swift */,
+				A1E5478C2490BA6300881BB1 /* SelectCountyTableViewController.swift */,
 			);
 			name = "지역별조회";
 			path = "지역별조회";
@@ -71,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				A1859CB9248CCC3100461F45 /* ParserViewController.swift */,
+				A1E5478E2490BAC300881BB1 /* ParserTableViewController.swift */,
 			);
 			path = ParserView;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 				A1B76086249092E200DD3BE3 /* MasterViewController.swift in Sources */,
 				A14BCB2C248F9E8E00739744 /* ShowRegionKindTableViewController.swift in Sources */,
 				A1859CBA248CCC3100461F45 /* ParserViewController.swift in Sources */,
+				A1E5478D2490BA6300881BB1 /* SelectCountyTableViewController.swift in Sources */,
 				A1E1760C24893EF200D5A1E2 /* SelectRegionViewController.swift in Sources */,
 				A1C0CD602484F568002D64FD /* ViewController.swift in Sources */,
 				A1E17606248934ED00D5A1E2 /* RegionMapViewController.swift in Sources */,
@@ -206,6 +213,7 @@
 				A1C0CD5C2484F568002D64FD /* AppDelegate.swift in Sources */,
 				A1B760882490939F00DD3BE3 /* SearchFooter.swift in Sources */,
 				A1C0CD5E2484F568002D64FD /* SceneDelegate.swift in Sources */,
+				A1E5478F2490BAC300881BB1 /* ParserTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

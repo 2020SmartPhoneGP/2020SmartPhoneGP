@@ -8,16 +8,19 @@ class GetAPI{
     let serviceKey : String = "ServiceKey=DeCjFxU1UcuiqQfAOH7zkJ8t7Nfra9iDFLrkosSdeSP6wvt5bQeKIjbhq4ht662LtQR%2BwTvpM54nIx%2BgeyEMdg%3D%3D"
     
     let command : Dictionary = [
-        "시도":"sido?", "유기동물 조회":"abandonmentPublic?"
+        "시도":"sido?", "유기동물 조회":"abandonmentPublic?", "시군구" : "sigungu?"
     
     ]
     
-    func getURL(wantURL : String) -> String{
-        if let com = command[wantURL]{
-            return url + com + serviceKey
-        }
-            
-        return ""
+    func getURL(wantURLs : String...) -> String{
+        var URL = url
+        for text in wantURLs{
+            if let com = command[text]{
+                URL += com
+            }
+        }       // 찾을 원소들
+        URL += serviceKey
+        return URL
     }
     
     func getFindWhole(wantURL : String) -> String{
@@ -26,6 +29,13 @@ class GetAPI{
             return url + com + "bgnde=20140301&endde=20150430&pageNo=1&numOfRow=10&" + serviceKey
         }
             
+        return ""
+    }
+    
+    func getCounty(wantURL : String, upperCd : String ) -> String{
+        if let com = command[wantURL]{
+            return url + com + "upr_cd=" + upperCd + "&" + serviceKey
+        }
         return ""
     }
 }

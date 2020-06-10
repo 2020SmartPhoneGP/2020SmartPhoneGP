@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="llk-AH-bze">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="876.81159420289862" y="983.70535714285711"/>
         </scene>
-        <!--종류 및 위치보기-->
+        <!--유기동물 정보 및 위치-->
         <scene sceneID="EPK-UV-Rnf">
             <objects>
                 <tableViewController id="fQc-nO-3cg" customClass="ShowRegionKindTableViewController" customModule="Team" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="h6G-nc-k8n" detailTextLabel="Rwd-fY-700" style="IBUITableViewCellStyleSubtitle" id="3HF-gF-HMU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="h6G-nc-k8n" detailTextLabel="6HY-8p-7IU" style="IBUITableViewCellStyleSubtitle" id="3HF-gF-HMU">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3HF-gF-HMU" id="flJ-Yb-I7Z">
@@ -113,7 +113,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rwd-fY-700">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6HY-8p-7IU">
                                             <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -129,7 +129,7 @@
                             <outlet property="delegate" destination="fQc-nO-3cg" id="74P-Ct-6Sf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="종류 및 위치보기" id="2sj-mk-KYh">
+                    <navigationItem key="navigationItem" title="유기동물 정보 및 위치" id="2sj-mk-KYh">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="xQc-Tf-eWA"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="EzT-mw-47b">
                             <connections>
@@ -143,7 +143,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMH-Se-znE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="256"/>
+            <point key="canvasLocation" x="4877" y="258"/>
         </scene>
         <!--동물의 위치-->
         <scene sceneID="xbE-DG-n3Q">
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywd-ej-lQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4085.507246376812" y="260.49107142857144"/>
+            <point key="canvasLocation" x="5997" y="263"/>
         </scene>
         <!--유기동물 조회 서비스-->
         <scene sceneID="2LY-Jg-yeb">
@@ -289,6 +289,51 @@
             </objects>
             <point key="canvasLocation" x="-2478" y="1906"/>
         </scene>
+        <!--군, 구 선택-->
+        <scene sceneID="TeU-Pe-t7c">
+            <objects>
+                <tableViewController id="ah3-Gx-8zU" customClass="SelectCountyTableViewController" customModule="Team" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3bE-K7-T9y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CountyCell" textLabel="x0Z-Fa-6IW" style="IBUITableViewCellStyleDefault" id="1hj-lb-rMl">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1hj-lb-rMl" id="NAy-qK-yCP">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x0Z-Fa-6IW">
+                                            <rect key="frame" x="20" y="0.0" width="355" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="OPf-Gy-YXA" kind="show" id="ljY-bJ-YY0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ah3-Gx-8zU" id="1Bw-TZ-aYQ"/>
+                            <outlet property="delegate" destination="ah3-Gx-8zU" id="KJd-tf-p09"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="군, 구 선택" id="hYA-Kp-ILS"/>
+                    <connections>
+                        <outlet property="navTitle" destination="hYA-Kp-ILS" id="iFB-Lr-RoY"/>
+                        <outlet property="tbData" destination="3bE-K7-T9y" id="uvW-lI-KUt"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRm-S7-f3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3019" y="259"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qn1-we-eRs">
             <objects>
@@ -306,7 +351,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ht6-dB-1Jy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2051" y="256"/>
+            <point key="canvasLocation" x="3964" y="258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fbt-uG-h4G">
@@ -327,7 +372,7 @@
             </objects>
             <point key="canvasLocation" x="-33.333333333333336" y="-485.49107142857139"/>
         </scene>
-        <!--지역 선택-->
+        <!--시, 도 선택-->
         <scene sceneID="nPh-cx-lyu">
             <objects>
                 <viewController id="vbq-C3-nxo" customClass="SelectRegionViewController" customModule="Team" customModuleProvider="target" sceneMemberID="viewController">
@@ -347,7 +392,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="KdU-r5-ajF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="지역 선택" id="Tqj-BT-mrI">
+                    <navigationItem key="navigationItem" title="시, 도 선택" id="Tqj-BT-mrI">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="0Mt-ZO-7Y8">
                             <connections>
                                 <segue destination="MR8-9S-Mbr" kind="unwind" unwindAction="doneToPickerViewControllerWithSegue:" id="vHU-nW-etg"/>
@@ -355,7 +400,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="1cT-GZ-YCq">
                             <connections>
-                                <segue destination="OPf-Gy-YXA" kind="show" identifier="segueToShowKind" id="jcS-rE-L6G"/>
+                                <segue destination="Fam-Zn-WER" kind="show" identifier="CountyTableViewController" id="bWP-aO-m8B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -577,6 +622,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y47-50-aXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16" y="2441"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Yi-x2-AmK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fam-Zn-WER" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="a9x-31-kFk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yLx-98-rcd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ah3-Gx-8zU" kind="relationship" relationship="rootViewController" id="lUz-4E-Ofw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAG-6q-NNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2107" y="259"/>
         </scene>
     </scenes>
 </document>
