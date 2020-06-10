@@ -19,6 +19,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SelectRegionViewController.prepare(for:sender:):SelectRegionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "targetNav.navigationItem.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ParserViewController.beginParsing(wantURL:strings:):ParserViewController.swift">
          <PersistentStrings>
             <PersistentString

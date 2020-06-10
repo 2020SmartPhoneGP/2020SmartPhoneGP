@@ -14,10 +14,12 @@ class SelectRegionViewController: ParserViewController, UIPickerViewDataSource, 
     
     // pickerView 테이터 배열
     var pickerDataSource : [String] = []
+    var pickerOrgCdSource : [String] = []
     var apiController : GetAPI = GetAPI()
     
     // 디폴트 시구코드 서울특별시
     var orgCd : String = "6110000"
+    var currentRow : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +27,16 @@ class SelectRegionViewController: ParserViewController, UIPickerViewDataSource, 
         self.regionPickerView.delegate = self;
         self.regionPickerView.dataSource = self;
         
-        beginParsing(wantURL: apiController.getURL(wantURL: "시도"), strings: "orgCd", "orgdownNm")       // 시도코드,   시도명
+        beginParsing(wantURL: apiController.getURL(wantURLs: "시도"), strings: "orgCd", "orgdownNm")       // 시도코드,   시도명
         
         if let cluster = valueCluster["orgdownNm"]{
             for value in cluster{
                 pickerDataSource.append(value)
+            }
+        }
+        if let cluster = valueCluster["orgCd"]{
+            for value in cluster{
+                pickerOrgCdSource.append(value)
             }
         }
     }
@@ -49,12 +56,16 @@ class SelectRegionViewController: ParserViewController, UIPickerViewDataSource, 
            return pickerDataSource[row]
        }
     
-    /*
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        currentRow = row
+        orgCd = pickerOrgCdSource[row]
+    }
+    
     // 각 지역 동물들을 찾기 위해 url을 준비해주는 작업
     // ShowRegionKindTableViewController에 url 정보를 전달하기 위해
     // UINav를 destination으로 설정 후 ShowRegionKindTableViewController를 선택
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "segueToShowKind"{              // 종류 및 위치보기로 넘어가기 위해
+    /*    if segue.identifier == "segueToShowKind"{              // 종류 및 위치보기로 넘어가기 위해
             if let navController = segue.destination as? UINavigationController{
                 if let showRegionKindTableViewController = navController.topViewController as? ShowRegionKindTableViewController{
                     showRegionKindTableViewController.url = url + pickerDataSource[row]
@@ -62,7 +73,18 @@ class SelectRegionViewController: ParserViewController, UIPickerViewDataSource, 
             }
             
         }
+    */
+        if segue.identifier == "CountyTableViewController"{
+            if let targetNav = segue.destination as? UINavigationController{
+                //targetNav.navigationItem.title = pickerDataSource[currentRow]
+                if let targetView = targetNav.topViewController as? SelectCountyTableViewController{
+                    targetView.navTitle.title = pickerDataSource[currentRow]
+                    targetView.upperCd = pickerOrgCdSource[currentRow]
+                    
+                }
+            }
+        }
     }
-     */
+     
 
 }
