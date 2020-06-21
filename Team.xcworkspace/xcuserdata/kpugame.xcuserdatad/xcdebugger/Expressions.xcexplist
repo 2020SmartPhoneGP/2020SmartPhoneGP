@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "RegionMapViewController.addJson(name:dictKey:dictValue:):RegionMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myJson">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RegionMapViewController.searchKeyword(keyword:):RegionMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myJson">
+            </PersistentString>
+            <PersistentString
+               value = "datas.count">
+            </PersistentString>
+            <PersistentString
+               value = "values.string!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RegionMapViewController.searchKeyword(keyword:):RegionMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myjson">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

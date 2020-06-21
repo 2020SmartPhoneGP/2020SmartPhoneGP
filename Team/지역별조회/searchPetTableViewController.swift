@@ -11,12 +11,17 @@ class searchPetTableViewController: ParserTableViewController {
     var specialMrk : [String] = []
     var status : [String] = []
     
+    var upperOrgCd : String = ""
+    var orgCd : String = ""
+    var breedKindCode : String = ""
+    var livestockCode : String = ""
+    var isInData : Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 200.0
         
-        beginParsing(wantURL: apiController.getURLs(keywords: "전체", "축종코드", "417000",
-        "품종코드", "000054", "시도코드", "6110000", "시군구코드", "3220000")
+        beginParsing(wantURL: apiController.getURLs(keywords: "전체", "축종코드", livestockCode,
+        "품종코드", breedKindCode, "시도코드", upperOrgCd, "시군구코드", orgCd)
             , strings: "popfile", "happenDt", "happenPlace", "processState", "sexCd", "specialMark")
         
         if let value = valueCluster["popfile"]{
@@ -37,6 +42,11 @@ class searchPetTableViewController: ParserTableViewController {
         if let value = valueCluster["specialMark"]{
             specialMrk = value
         }
+        
+        if imageName.count == 0{
+            isInData = false
+            imageName.append("DELETE")
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,21 +62,32 @@ class searchPetTableViewController: ParserTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath) as! PetTableViewCell
         
-        if let url = URL(string:imageName[indexPath.row]){
-            if let data = try? Data(contentsOf: url){
-                cell.petImageView.image = UIImage(data: data)
+        if isInData{
+            if let url = URL(string:imageName[indexPath.row]){
+                if let data = try? Data(contentsOf: url){
+                    cell.petImageView.image = UIImage(data: data)
+                }
             }
-        }
-        cell.happenDate.text = happenDt[indexPath.row]
-        cell.happenPlace.text = happenPlace[indexPath.row]
-        if sex[indexPath.row] == "F"{
-            cell.sex.text = "여자"
+            cell.happenDate.text = happenDt[indexPath.row]
+            cell.happenPlace.text = happenPlace[indexPath.row]
+            if sex[indexPath.row] == "F"{
+                cell.sex.text = "여자"
+            }
+            else{
+                cell.sex.text = "남자"
+            }
+            cell.specialMark.text = specialMrk[indexPath.row]
+            cell.status.text = "상태 : " + status[indexPath.row]
+
         }
         else{
-            cell.sex.text = "남자"
+            cell.status.text = "정보가 없습니다."
+            
+            cell.specialMark.text = ""
+            cell.happenDate.text = ""
+            cell.happenPlace.text = ""
+            cell.sex.text = ""
         }
-        cell.specialMark.text = specialMrk[indexPath.row]
-        cell.status.text = "상태 : " + status[indexPath.row]
         return cell
     }
 

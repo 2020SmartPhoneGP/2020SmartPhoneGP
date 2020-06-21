@@ -220,6 +220,7 @@
                                     <outlet property="sex" destination="sGZ-ZE-4gS" id="lf6-Tg-sx1"/>
                                     <outlet property="specialMark" destination="HRh-gD-I2h" id="wyC-HL-Vsg"/>
                                     <outlet property="status" destination="pp8-fa-me2" id="Yx8-FB-LcX"/>
+                                    <segue destination="nBD-vy-vkW" kind="show" id="FF6-Ty-QMb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -232,14 +233,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6We-yS-1l3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4221.739130434783" y="983.70535714285711"/>
+            <point key="canvasLocation" x="4193" y="984"/>
         </scene>
-        <!--동물의 위치-->
+        <!--유기동물 보호소 위치-->
         <scene sceneID="xbE-DG-n3Q">
             <objects>
-                <viewController title="동물의 위치" id="nBD-vy-vkW" customClass="RegionMapViewController" customModule="Team" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="유기동물 보호소 위치" id="nBD-vy-vkW" customClass="RegionMapViewController" customModule="Team" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O46-T3-Wue">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QSv-pD-BaN">
@@ -250,11 +251,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Vi3-GF-dBh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZRx-jX-aAV"/>
+                    <navigationItem key="navigationItem" title="유기동물 보호소 위치" id="ZRx-jX-aAV"/>
+                    <connections>
+                        <outlet property="mapView" destination="QSv-pD-BaN" id="kQI-NK-cwG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywd-ej-lQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5113" y="256"/>
+            <point key="canvasLocation" x="5216" y="984"/>
         </scene>
         <!--유기동물 조회 서비스-->
         <scene sceneID="2LY-Jg-yeb">
@@ -344,7 +348,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3NC-u7-aGH" kind="show" identifier="segueToList" id="Daj-tV-QfY"/>
+                                            <segue destination="PwE-aM-WP4" kind="show" id="bZE-tx-Wkb"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="oGQ-6y-dhT" style="IBUITableViewCellStyleDefault" id="JKy-5b-n0K">
@@ -404,7 +408,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Gxc-Tc-yGM" kind="show" id="KfI-Qt-K7q"/>
+                                    <segue destination="Gxc-Tc-yGM" kind="show" identifier="segueToShowKind" id="KfI-Qt-K7q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -502,37 +506,6 @@
             </objects>
             <point key="canvasLocation" x="-33.333333333333336" y="983.70535714285711"/>
         </scene>
-        <!--리스트-->
-        <scene sceneID="Y4Y-IB-4Jn">
-            <objects>
-                <tableViewController id="aRH-yw-6sG" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="59S-U0-Aao">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zQa-Pb-eZi">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zQa-Pb-eZi" id="Xft-PJ-wHY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="aRH-yw-6sG" id="28t-5t-IOj"/>
-                            <outlet property="delegate" destination="aRH-yw-6sG" id="ORn-Gn-AUM"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="리스트" id="pZ5-zH-x62">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="dP2-1w-YY5"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bOS-0j-AST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="871.01449275362324" y="1709.5982142857142"/>
-        </scene>
         <!--해당 동물-->
         <scene sceneID="Zaj-6h-ZL3">
             <objects>
@@ -556,25 +529,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgS-H6-zzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2859" y="2441"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="o0P-dU-oFJ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3NC-u7-aGH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="8vC-MJ-wWI"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ii7-dl-hZK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aRH-yw-6sG" kind="relationship" relationship="rootViewController" id="eWb-v7-bS7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lsE-hJ-GJ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-39.130434782608695" y="1709.5982142857142"/>
         </scene>
         <!--조건별 동물 검색-->
         <scene sceneID="4l6-Qj-xav">
@@ -778,13 +732,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="7Iz-fn-XXq">
                             <connections>
-                                <segue destination="BUZ-KL-rF3" kind="show" id="xeu-Uq-i22"/>
+                                <segue destination="BUZ-KL-rF3" kind="show" identifier="searchPet" id="xeu-Uq-i22"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="breedKindCell" destination="zCA-FF-i7m" id="Bag-eQ-WfC"/>
                         <outlet property="livestockCell" destination="CJp-3x-AgL" id="8Ae-7f-F6m"/>
+                        <outlet property="searchButton" destination="7Iz-fn-XXq" id="1OH-an-FIG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4g-mX-7Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -824,6 +779,127 @@
                 <exit id="zaD-oY-Ngl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4193" y="-384"/>
+        </scene>
+        <!--찾지못한 애완동물-->
+        <scene sceneID="hLI-4R-FxJ">
+            <objects>
+                <tableViewController title="찾지못한 애완동물" id="E6D-1F-b9z" customClass="AbandonPetTableViewController" customModule="Team" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ot4-60-Myk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AbandonPetTableViewCell" rowHeight="200" id="Nzr-ZB-3RP" customClass="PetTableViewCell" customModule="Team" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nzr-ZB-3RP" id="1Gy-cQ-MuA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="보호날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgQ-jl-Aga">
+                                            <rect key="frame" x="303" y="11" width="59" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="유기위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znx-Pp-o00">
+                                            <rect key="frame" x="303" y="60" width="59" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="특이사항 : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUD-ne-pkX">
+                                            <rect key="frame" x="190" y="172" width="224" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWB-Eb-3L0">
+                                            <rect key="frame" x="317" y="108" width="30" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상태 :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uM-xt-1dk">
+                                            <rect key="frame" x="9" y="172" width="173" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLG-1K-yUX">
+                                            <rect key="frame" x="250" y="36" width="164" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p18-Ya-TFC">
+                                            <rect key="frame" x="250" y="84" width="164" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgH-Tt-J6C">
+                                            <rect key="frame" x="250" y="132" width="164" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJU-Wr-tcP">
+                                            <rect key="frame" x="9" y="19" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="happenDate" destination="zLG-1K-yUX" id="zfI-Ha-KMS"/>
+                                    <outlet property="happenPlace" destination="p18-Ya-TFC" id="gGy-kD-3fu"/>
+                                    <outlet property="petImageView" destination="CJU-Wr-tcP" id="v0b-wI-h7G"/>
+                                    <outlet property="sex" destination="dgH-Tt-J6C" id="1oz-vJ-hpm"/>
+                                    <outlet property="specialMark" destination="WUD-ne-pkX" id="33C-ZH-DCc"/>
+                                    <outlet property="status" destination="8uM-xt-1dk" id="ysO-PU-F2r"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E6D-1F-b9z" id="GBf-HE-g62"/>
+                            <outlet property="delegate" destination="E6D-1F-b9z" id="cjO-IY-1Wh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="주인을 찾지못한 유기동물 (최근순)" id="c3m-NX-PjR"/>
+                    <connections>
+                        <outlet property="tbData" destination="Ot4-60-Myk" id="EG6-k6-Z2w"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JwF-0F-ZGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877" y="1698"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I5B-fo-btB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PwE-aM-WP4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="SfF-nk-WZA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wE4-w3-h4T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E6D-1F-b9z" kind="relationship" relationship="rootViewController" id="Rb2-K2-Gkf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0my-Zr-QVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33" y="1698"/>
         </scene>
     </scenes>
 </document>

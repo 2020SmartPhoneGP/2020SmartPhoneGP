@@ -13,10 +13,15 @@ class ShowRegionKindTableViewController: ParserTableViewController {
     @IBOutlet weak var livestockCell: UITableViewCell!
     @IBOutlet weak var breedKindCell: UITableViewCell!
     
+    @IBOutlet weak var searchButton: UIBarButtonItem!
+    
     var currentLivestockCode : String = ""
     var currentLivestock : String = ""
     var currentBreedKindCode : String = ""
     var currentBreedKind : String = ""
+    var currentOrgCd : String = "" //시도 코드
+    var currentDownOrgCd : String = "" //시군구 코드
+    
     // SelectCountyTableViewController로 부터 segue를 통해 전해받은 정보
     @IBAction func showRegionKind(segue: UIStoryboardSegue){
         if let livestockView = segue.source as? SelectLivestockTableController{
@@ -31,6 +36,7 @@ class ShowRegionKindTableViewController: ParserTableViewController {
         if let breedKindView = segue.source as? SelectBreedKindTableController{
             breedKindCell.textLabel?.text = breedKindView.currentBreedKind
             currentBreedKind = breedKindView.currentBreedKind
+            searchButton.isEnabled = true
         }
     }
     
@@ -39,6 +45,7 @@ class ShowRegionKindTableViewController: ParserTableViewController {
         if livestockCell.textLabel?.text == "축종"{
             breedKindCell.isUserInteractionEnabled = false
             breedKindCell.textLabel?.text = "축종을 선택해주세요."
+            searchButton.isEnabled = false
         }
         
     }
@@ -65,6 +72,14 @@ class ShowRegionKindTableViewController: ParserTableViewController {
                 breedKind.currentLivestock = currentLivestock
                 breedKind.currentLivestockCode = currentLivestockCode
                 breedKind.currentBreedKind = currentBreedKind
+            }
+        }
+        if segue.identifier == "searchPet"{
+            if let searchPet = segue.destination as? searchPetTableViewController{
+                searchPet.upperOrgCd = currentOrgCd
+                searchPet.orgCd = currentDownOrgCd
+                searchPet.breedKindCode = currentBreedKindCode
+                searchPet.livestockCode = currentLivestockCode
             }
         }
             
