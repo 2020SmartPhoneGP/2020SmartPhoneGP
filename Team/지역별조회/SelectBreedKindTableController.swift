@@ -19,6 +19,7 @@ class SelectBreedKindTableController: ParserTableViewController {
     var currentBreedKindCode : String = ""
     
     var KNm : [String] = []
+    var bKCd : [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         if currentLivestock != "축종"{
@@ -26,7 +27,12 @@ class SelectBreedKindTableController: ParserTableViewController {
         }
         
         if let cluster = valueCluster["KNm"]{
-            KNm = cluster
+            KNm.append("전체")
+            KNm.append(contentsOf: cluster)
+        }
+        if let cluster = valueCluster["kindCd"]{
+            bKCd.append("전체")
+            bKCd.append(contentsOf: cluster)
         }
         tbData.reloadData()
     }
@@ -52,7 +58,7 @@ class SelectBreedKindTableController: ParserTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentBreedKind = KNm[indexPath.row]
-        
+        currentBreedKindCode = bKCd[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
@@ -64,7 +70,15 @@ class SelectBreedKindTableController: ParserTableViewController {
                 let indexPath = tableView.indexPath(for: cell)
                 if let index = indexPath?.row{
                     currentBreedKind = KNm[index]
+                    currentBreedKindCode = bKCd[index]
                 }
+                
+            }
+            if let showRegionKindTableViewController = segue.destination as? ShowRegionKindTableViewController{
+                showRegionKindTableViewController.currentBreedKindCode = currentBreedKindCode
+            }
+            if let kSTVC = segue.destination as? showKindTableViewController{
+                kSTVC.currentBreedKindCode = currentBreedKindCode
             }
         }
     }

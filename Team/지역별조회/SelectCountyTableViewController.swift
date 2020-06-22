@@ -11,6 +11,7 @@ class SelectCountyTableViewController: ParserTableViewController {
     var apiController : GetAPI = GetAPI()
     
     var orgdownNm : [String] = []
+    var orgCds : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class SelectCountyTableViewController: ParserTableViewController {
         
         if let cluster = valueCluster["orgdownNm"]{
             orgdownNm = cluster
+        }
+        if let cluster = valueCluster["orgCd"]{
+            orgCds = cluster
         }
         tbData.reloadData()
     }
@@ -41,15 +45,23 @@ class SelectCountyTableViewController: ParserTableViewController {
         
         return cell
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "segueToShowKind"{              // 종류 및 위치보기로 넘어가기 위해
-            if let navController = segue.destination as? UINavigationController{
-                if let showRegionKindTableViewController = navController.topViewController as? ShowRegionKindTableViewController{
-                    
-                }
-            }
-            
-        }
     
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        orgCd = orgCds[indexPath.row]
+        return indexPath
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath : NSIndexPath){
+        
+        //self.performSegue(withIdentifier: "segueToShowKind", sender: tableView)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "segueToShowKind"{
+            if let showRegionKindTableViewController = segue.destination as? ShowRegionKindTableViewController{
+                showRegionKindTableViewController.currentOrgCd = upperCd
+                showRegionKindTableViewController.currentDownOrgCd = orgCd
+            }
+        }
     }
 }
