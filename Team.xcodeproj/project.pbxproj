@@ -144,6 +144,15 @@
 			path = "조건별 동물 검색";
 			sourceTree = "<group>";
 		};
+		A1BFAF3B24A08F2700D0D193 /* 전체 유기동물 조회 */ = {
+			isa = PBXGroup;
+			children = (
+				A1E176032488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift */,
+			);
+			name = "전체 유기동물 조회";
+			path = "전체 유기동물 조회";
+			sourceTree = "<group>";
+		};
 		A1C0CD4F2484F568002D64FD = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +174,7 @@
 		A1C0CD5A2484F568002D64FD /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				A1BFAF3B24A08F2700D0D193 /* 전체 유기동물 조회 */,
 				A1BFAF3224A066DE00D0D193 /* 조건별 동물 검색 */,
 				A1B265C9249F8D6E0093665A /* 찾지 못한 동물 조회 */,
 				A1B7608A2490B2BE00DD3BE3 /* DetailViewController.swift */,
@@ -180,7 +190,6 @@
 				A1C0CD642484F56A002D64FD /* Assets.xcassets */,
 				A1C0CD662484F56A002D64FD /* LaunchScreen.storyboard */,
 				A1C0CD692484F56A002D64FD /* Info.plist */,
-				A1E176032488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift */,
 				A1859CB3248CC51D00461F45 /* GetAPI.swift */,
 			);
 			path = Team;

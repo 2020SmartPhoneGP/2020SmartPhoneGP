@@ -1,11 +1,20 @@
+//
+//  FindWholeAnimalTableViewController.swift
+//  Team
+//
+//  Created by KPUGAME on 2020/06/04.
+//  Copyright © 2020 KPUGAME. All rights reserved.
+//
+
 import UIKit
 
-class AbandonPetTableViewController: ParserTableViewController {
-
+class FindWholeAnimalTableViewController: ParserTableViewController {
+    
+    var dataSource : [String] = []
     var apiController : GetAPI = GetAPI()
     
-    var imageName : [String] = []
     var happenDt : [String] = []
+    var imageName : [String] = []
     var happenPlace : [String] = []
     var sex : [String] = []
     var specialMrk : [String] = []
@@ -14,52 +23,40 @@ class AbandonPetTableViewController: ParserTableViewController {
     var careTel : [String] = []
     var careAddr : [String] = []
     
-    var currentIndex : Int = -1
     var row = 10
     var pageNo = 1
-    @IBOutlet var tbData: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 200.0
+    var currentIndex = -1
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return imageName.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath) as! PetTableViewCell
         
-        beginParsing(wantURL: apiController.getURLs(keywords: "전체", "상태", "&", "페이지", String(pageNo))
-            , strings: "popfile", "happenDt", "happenPlace", "processState", "sexCd", "specialMark", "careNm", "careTel", "careAddr")
-        
-        if let value = valueCluster["popfile"]{
-            imageName = value
+        if let url = URL(string:imageName[indexPath.row]){
+            if let data = try? Data(contentsOf: url){
+                cell.petImageView.image = UIImage(data: data)
+            }
         }
-        if let value = valueCluster["happenDt"]{
-            happenDt = value
+        cell.happenDate.text = happenDt[indexPath.row]
+        cell.happenPlace.text = happenPlace[indexPath.row]
+        if sex[indexPath.row] == "F"{
+            cell.sex.text = "여자"
         }
-        if let value = valueCluster["happenPlace"]{
-            happenPlace = value
+        else{
+                cell.sex.text = "남자"
         }
-        if let value = valueCluster["processState"]{
-            status = value
-        }
-        if let value = valueCluster["sexCd"]{
-            sex = value
-        }
-        if let value = valueCluster["specialMark"]{
-            specialMrk = value
-        }
-        if let value = valueCluster["careNm"]{
-            careNm = value
-        }
-        if let value = valueCluster["careTel"]{
-            careTel = value
-        }
-        if let value = valueCluster["careAddr"]{
-            careAddr = value
-        }
-        tbData.reloadData()
+        cell.specialMark.text = specialMrk[indexPath.row]
+        cell.status.text = "상태 : " + status[indexPath.row]
+
+        return cell
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == row-2{
             pageNo += 1
-            beginParsing(wantURL: apiController.getURLs(keywords: "전체", "상태", "&", "페이지", String(pageNo))
+            beginParsing(wantURL: apiController.getURLs(keywords: "전체", "페이지", String(pageNo))
                 , strings: "popfile", "happenDt", "happenPlace", "processState", "sexCd", "specialMark", "careNm", "careTel", "careAddr")
             
             if let value = valueCluster["popfile"]{
@@ -95,14 +92,40 @@ class AbandonPetTableViewController: ParserTableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       
-        return 1
-    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        beginParsing(wantURL: apiController.getURLs(keywords: "전체", "페이지", String(pageNo))
+            , strings: "popfile", "happenDt", "happenPlace", "processState", "sexCd", "specialMark", "careNm", "careTel", "careAddr")
         
-        return imageName.count
+        if let value = valueCluster["popfile"]{
+            imageName = value
+        }
+        if let value = valueCluster["happenDt"]{
+            happenDt = value
+        }
+        if let value = valueCluster["happenPlace"]{
+            happenPlace = value
+        }
+        if let value = valueCluster["processState"]{
+            status = value
+        }
+        if let value = valueCluster["sexCd"]{
+            sex = value
+        }
+        if let value = valueCluster["specialMark"]{
+            specialMrk = value
+        }
+        if let value = valueCluster["careNm"]{
+            careNm = value
+        }
+        if let value = valueCluster["careTel"]{
+            careTel = value
+        }
+        if let value = valueCluster["careAddr"]{
+            careAddr = value
+        }
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -112,31 +135,8 @@ class AbandonPetTableViewController: ParserTableViewController {
         return indexPath
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AbandonPetTableViewCell", for: indexPath) as! PetTableViewCell
-        
-        if let url = URL(string:imageName[indexPath.row]){
-            if let data = try? Data(contentsOf: url){
-                cell.petImageView.image = UIImage(data: data)
-            }
-        }
-        cell.happenDate.text = happenDt[indexPath.row]
-        cell.happenPlace.text = happenPlace[indexPath.row]
-        if sex[indexPath.row] == "F"{
-            cell.sex.text = "여자"
-        }
-        else{
-                cell.sex.text = "남자"
-        }
-        cell.specialMark.text = specialMrk[indexPath.row]
-        cell.status.text = "상태 : " + status[indexPath.row]
-
-
-        return cell
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToAbandonMap" {
+        if segue.identifier == "segueToAll" {
             if let abandonMapViewController = segue.destination as? AbandonMapViewController{
                 if currentIndex != -1{
                     abandonMapViewController.currentCareNm = careNm[currentIndex]
@@ -146,4 +146,5 @@ class AbandonPetTableViewController: ParserTableViewController {
             }
         }
     }
+
 }

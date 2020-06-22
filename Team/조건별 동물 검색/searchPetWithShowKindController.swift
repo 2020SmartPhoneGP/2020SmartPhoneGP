@@ -20,7 +20,7 @@ class searchPetWithShowKindTableViewController: ParserTableViewController {
     var livestockCode : String = ""
     var isInData : Bool = true
     var row : Int = 10
-    var pageNo : Int = 2
+    var pageNo : Int = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 200.0
