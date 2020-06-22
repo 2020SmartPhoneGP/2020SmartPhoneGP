@@ -3,7 +3,7 @@ import UIKit
 import SwiftyJSON
 import MapKit
 
-class RegionMapViewController: ParserViewController, MKMapViewDelegate {
+class AbandonMapViewController: ParserViewController, MKMapViewDelegate {
 
     var apiController : GetAPI = GetAPI()
     

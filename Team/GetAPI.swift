@@ -10,7 +10,7 @@ class GetAPI{
     let command : Dictionary = [
         "시도":"sido?", "유기동물 조회":"abandonmentPublic?", "시군구" : "sigungu?", "품종" : "kind?up_kind_cd=", "전체" : "abandonmentPublic?", "유기날짜" : "bgnde=",
         "축종코드" : "upkind=", "품종코드" : "kind=", "시도코드" : "upr_cd=", "시군구코드" : "org_cd=",
-        "상태" : "state="
+        "상태" : "state=", "페이지" : "pageNo="
     
     ]
     

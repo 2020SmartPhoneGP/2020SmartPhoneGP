@@ -9,15 +9,27 @@ class RegionMapViewController: ParserViewController, MKMapViewDelegate {
     
     let urlKaKao : String = "https://dapi.kakao.com/v2/local/search/keyword.json?query="
     let serviceKeyKaKao : String = "9fb0a00c7f2ee88b655b37d5deb61879"
-    @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapInfo: UILabel!
+    @IBOutlet weak var addressInfo: UILabel!
+    @IBOutlet weak var numberInfo: UILabel!
+    
+    
+    var currentCareNm = ""
+    var currentCareAddr = ""
+    var currentCareTel = ""
     var myJson : Dictionary<String, [[String:String]]> = [:]
         
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        searchKeyword(keyword: "유기동물보호소")
-        print(myJson)
+        if currentCareNm != ""{
+            searchKeyword(keyword: currentCareNm)
+            mapInfo.text = currentCareNm
+            addressInfo.text = currentCareAddr
+            numberInfo.text = currentCareTel
+        }
     }
 
     func addJson(name : String, dictKey : String, dictValue : String){

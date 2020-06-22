@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		A1B76086249092E200DD3BE3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B76085249092E200DD3BE3 /* MasterViewController.swift */; };
 		A1B760882490939F00DD3BE3 /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B760872490939F00DD3BE3 /* SearchFooter.swift */; };
 		A1B7608B2490B2BE00DD3BE3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B7608A2490B2BE00DD3BE3 /* DetailViewController.swift */; };
+		A1BFAF3124A0652A00D0D193 /* AbandonMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFAF3024A0652A00D0D193 /* AbandonMapViewController.swift */; };
+		A1BFAF3624A06B6800D0D193 /* ShowKindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFAF3524A06B6800D0D193 /* ShowKindTableViewController.swift */; };
+		A1BFAF3824A06CE100D0D193 /* searchPetWithShowKindController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFAF3724A06CE100D0D193 /* searchPetWithShowKindController.swift */; };
 		A1C0CD5C2484F568002D64FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0CD5B2484F568002D64FD /* AppDelegate.swift */; };
 		A1C0CD5E2484F568002D64FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0CD5D2484F568002D64FD /* SceneDelegate.swift */; };
 		A1C0CD602484F568002D64FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0CD5F2484F568002D64FD /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 		A1B76085249092E200DD3BE3 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A1B760872490939F00DD3BE3 /* SearchFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
 		A1B7608A2490B2BE00DD3BE3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A1BFAF3024A0652A00D0D193 /* AbandonMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbandonMapViewController.swift; sourceTree = "<group>"; };
+		A1BFAF3524A06B6800D0D193 /* ShowKindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowKindTableViewController.swift; sourceTree = "<group>"; };
+		A1BFAF3724A06CE100D0D193 /* searchPetWithShowKindController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchPetWithShowKindController.swift; sourceTree = "<group>"; };
 		A1C0CD582484F568002D64FD /* Team.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Team.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C0CD5B2484F568002D64FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1C0CD5D2484F568002D64FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,11 +88,10 @@
 				12D154D9B8EE603DBA50FF54 /* Pods-Team.debug.xcconfig */,
 				32E504C25B7C1D4A274B9018 /* Pods-Team.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A1859CB5248CC74300461F45 /* 지역별조회 */ = {
+		A1859CB5248CC74300461F45 /* 지역별조회 */ = {
 			isa = PBXGroup;
 			children = (
 				A1E17605248934EC00D5A1E2 /* RegionMapViewController.swift */,
@@ -111,9 +116,10 @@
 			path = ParserView;
 			sourceTree = "<group>";
 		};
-		A1B265C9249F8D6E0093665A /* 찾지 못한 동물 조회 */ = {
+		A1B265C9249F8D6E0093665A /* 찾지 못한 동물 조회 */ = {
 			isa = PBXGroup;
 			children = (
+				A1BFAF3024A0652A00D0D193 /* AbandonMapViewController.swift */,
 				A1B265CA249F8F6F0093665A /* AbandonPetTableViewController.swift */,
 			);
 			name = "찾지 못한 동물 조회";
@@ -126,6 +132,16 @@
 				A1B760872490939F00DD3BE3 /* SearchFooter.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		A1BFAF3224A066DE00D0D193 /* 조건별 동물 검색 */ = {
+			isa = PBXGroup;
+			children = (
+				A1BFAF3724A06CE100D0D193 /* searchPetWithShowKindController.swift */,
+				A1BFAF3524A06B6800D0D193 /* ShowKindTableViewController.swift */,
+			);
+			name = "조건별 동물 검색";
+			path = "조건별 동물 검색";
 			sourceTree = "<group>";
 		};
 		A1C0CD4F2484F568002D64FD = {
@@ -149,13 +165,14 @@
 		A1C0CD5A2484F568002D64FD /* Team */ = {
 			isa = PBXGroup;
 			children = (
-				A1B265C9249F8D6E0093665A /* 찾지 못한 동물 조회 */,
+				A1BFAF3224A066DE00D0D193 /* 조건별 동물 검색 */,
+				A1B265C9249F8D6E0093665A /* 찾지 못한 동물 조회 */,
 				A1B7608A2490B2BE00DD3BE3 /* DetailViewController.swift */,
 				A1B76083249092D100DD3BE3 /* SearchSource.swift */,
 				A1B76085249092E200DD3BE3 /* MasterViewController.swift */,
 				A1B760892490963700DD3BE3 /* Search */,
 				A1859CB8248CCC1C00461F45 /* ParserView */,
-				A1859CB5248CC74300461F45 /* 지역별조회 */,
+				A1859CB5248CC74300461F45 /* 지역별조회 */,
 				A1C0CD5B2484F568002D64FD /* AppDelegate.swift */,
 				A1C0CD5D2484F568002D64FD /* SceneDelegate.swift */,
 				A1C0CD5F2484F568002D64FD /* ViewController.swift */,
@@ -294,6 +311,7 @@
 			files = (
 				A1B7608B2490B2BE00DD3BE3 /* DetailViewController.swift in Sources */,
 				A1B265CB249F8F6F0093665A /* AbandonPetTableViewController.swift in Sources */,
+				A1BFAF3824A06CE100D0D193 /* searchPetWithShowKindController.swift in Sources */,
 				A1E547952491577800881BB1 /* searchPetTableViewController.swift in Sources */,
 				A1E547932491420B00881BB1 /* SelectBreedKindTableController.swift in Sources */,
 				A1E176042488F5E700D5A1E2 /* FindWholeAnimalTableViewController.swift in Sources */,
@@ -305,8 +323,10 @@
 				A1E1760C24893EF200D5A1E2 /* SelectRegionViewController.swift in Sources */,
 				A1C0CD602484F568002D64FD /* ViewController.swift in Sources */,
 				A1E17606248934ED00D5A1E2 /* RegionMapViewController.swift in Sources */,
+				A1BFAF3124A0652A00D0D193 /* AbandonMapViewController.swift in Sources */,
 				A1859CB4248CC51D00461F45 /* GetAPI.swift in Sources */,
 				A1C0CD5C2484F568002D64FD /* AppDelegate.swift in Sources */,
+				A1BFAF3624A06B6800D0D193 /* ShowKindTableViewController.swift in Sources */,
 				A1B760882490939F00DD3BE3 /* SearchFooter.swift in Sources */,
 				A1C0CD5E2484F568002D64FD /* SceneDelegate.swift in Sources */,
 				A1E5478F2490BAC300881BB1 /* ParserTableViewController.swift in Sources */,

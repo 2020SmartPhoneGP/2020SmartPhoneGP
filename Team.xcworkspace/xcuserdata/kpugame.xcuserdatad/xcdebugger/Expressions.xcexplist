@@ -3,10 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "RegionMapViewController.addJson(name:dictKey:dictValue:):RegionMapViewController.swift">
+         contextName = "ParserTableViewController.beginParsing(wantURL:strings:):ParserTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "myJson">
+               value = "texts">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "searchPetWithShowKindTableViewController.tableView(_:cellForRowAt:):searchPetWithShowKindController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -14,13 +22,30 @@
          contextName = "closure #1 in RegionMapViewController.searchKeyword(keyword:):RegionMapViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "myJson">
+               value = "values.string!">
             </PersistentString>
             <PersistentString
                value = "datas.count">
             </PersistentString>
             <PersistentString
-               value = "values.string!">
+               value = "myJson">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "searchPetWithShowKindTableViewController.tableView(_:willDisplay:forRowAt:):searchPetWithShowKindController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "path.row">
+            </PersistentString>
+            <PersistentString
+               value = "value">
+            </PersistentString>
+            <PersistentString
+               value = "imageName">
+            </PersistentString>
+            <PersistentString
+               value = "i">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -29,6 +54,42 @@
          <PersistentStrings>
             <PersistentString
                value = "myjson">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RegionMapViewController.addJson(name:dictKey:dictValue:):RegionMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myJson">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ShowRegionKindTableViewController.prepare(for:sender:):ShowRegionKindTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentBreedKindCode">
+            </PersistentString>
+            <PersistentString
+               value = "currentDownOrgCd">
+            </PersistentString>
+            <PersistentString
+               value = "currentLivestockCode">
+            </PersistentString>
+            <PersistentString
+               value = "currentOrgCd">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "showKindTableViewController.prepare(for:sender:):ShowKindTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentBreedKindCode">
+            </PersistentString>
+            <PersistentString
+               value = "currentLivestockCode">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

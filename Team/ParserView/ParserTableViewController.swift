@@ -20,11 +20,11 @@ class ParserTableViewController: UITableViewController, XMLParserDelegate {
     }
     
     func beginParsing(wantURL : String, strings : String...){
+        texts.removeAll()
         for text in strings{
             texts.append(text)
             valueCluster[text] = []
         }       // 찾을 원소들
-        
         parser = XMLParser(contentsOf: (URL(string : wantURL))!)!
         parser.delegate = self
         parser.parse()

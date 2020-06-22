@@ -10,7 +10,12 @@ class AbandonPetTableViewController: ParserTableViewController {
     var sex : [String] = []
     var specialMrk : [String] = []
     var status : [String] = []
+    var careNm : [String] = []
+    var careTel : [String] = []
+    var careAddr : [String] = []
     
+    var currentIndex : Int = -1
+    var row = 10
     @IBOutlet var tbData: UITableView!
     
     override func viewDidLoad() {
@@ -18,7 +23,7 @@ class AbandonPetTableViewController: ParserTableViewController {
         self.tableView.estimatedRowHeight = 200.0
         
         beginParsing(wantURL: apiController.getURLs(keywords: "전체", "상태", "&")
-            , strings: "popfile", "happenDt", "happenPlace", "processState", "sexCd", "specialMark")
+            , strings: "popfile", "happenDt", "happenPlace", "processState", "sexCd", "specialMark", "careNm", "careTel", "careAddr")
         
         if let value = valueCluster["popfile"]{
             imageName = value
@@ -38,9 +43,55 @@ class AbandonPetTableViewController: ParserTableViewController {
         if let value = valueCluster["specialMark"]{
             specialMrk = value
         }
+        if let value = valueCluster["careNm"]{
+            careNm = value
+        }
+        if let value = valueCluster["careTel"]{
+            careTel = value
+        }
+        if let value = valueCluster["careAddr"]{
+            careAddr = value
+        }
         tbData.reloadData()
     }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == row-2{
+            beginParsing(wantURL: apiController.getURLs(keywords: "전체", "상태", "&")
+                , strings: "popfile", "happenDt", "happenPlace", "processState", "sexCd", "specialMark", "careNm", "careTel", "careAddr")
+            if let value = valueCluster["popfile"]{
+                imageName.append(contentsOf: value)
+            }
+            if let value = valueCluster["happenDt"]{
+                happenDt.append(contentsOf: value)
+            }
+            if let value = valueCluster["happenPlace"]{
+                happenPlace.append(contentsOf: value)
+            }
+            if let value = valueCluster["processState"]{
+                status.append(contentsOf: value)
+            }
+            if let value = valueCluster["sexCd"]{
+                sex.append(contentsOf: value)
+            }
+            if let value = valueCluster["specialMark"]{
+                specialMrk.append(contentsOf: value)
+            }
+            if let value = valueCluster["careNm"]{
+                careNm.append(contentsOf: value)
+            }
+            if let value = valueCluster["careTel"]{
+                careTel.append(contentsOf: value)
+            }
+            if let value = valueCluster["careAddr"]{
+                careAddr.append(contentsOf: value)
+            }
+            
+            tableView.reloadData()
+            row += 10
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
        
         return 1
@@ -49,6 +100,13 @@ class AbandonPetTableViewController: ParserTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return imageName.count
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if careNm.count != 0{
+            currentIndex = indexPath.row
+        }
+        return indexPath
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,5 +131,16 @@ class AbandonPetTableViewController: ParserTableViewController {
 
         return cell
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToAbandonMap" {
+            if let abandonMapViewController = segue.destination as? AbandonMapViewController{
+                if currentIndex != -1{
+                    abandonMapViewController.currentCareNm = careNm[currentIndex]
+                    abandonMapViewController.currentCareAddr = careAddr[currentIndex]
+                    abandonMapViewController.currentCareTel = careTel[currentIndex]
+                }
+            }
+        }
+    }
 }

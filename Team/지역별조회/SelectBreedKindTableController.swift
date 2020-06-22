@@ -27,10 +27,12 @@ class SelectBreedKindTableController: ParserTableViewController {
         }
         
         if let cluster = valueCluster["KNm"]{
-            KNm = cluster
+            KNm.append("전체")
+            KNm.append(contentsOf: cluster)
         }
         if let cluster = valueCluster["kindCd"]{
-            bKCd = cluster
+            bKCd.append("전체")
+            bKCd.append(contentsOf: cluster)
         }
         tbData.reloadData()
     }
@@ -74,6 +76,9 @@ class SelectBreedKindTableController: ParserTableViewController {
             }
             if let showRegionKindTableViewController = segue.destination as? ShowRegionKindTableViewController{
                 showRegionKindTableViewController.currentBreedKindCode = currentBreedKindCode
+            }
+            if let kSTVC = segue.destination as? showKindTableViewController{
+                kSTVC.currentBreedKindCode = currentBreedKindCode
             }
         }
     }
